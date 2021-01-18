@@ -1,16 +1,33 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Task } from '../models/task.model';
 
 @Component({
   selector: 'app-task',
   template: `
-    <div class="list-item">
-      <input type="text" [value]="task.title" readonly />
+    <div class="list-item {{ task?.state }}">
+      <label class="checkbox">
+        <input
+          type="checkbox"
+          [defaultChecked]="task?.state === 'TASK_ARCHIVED'"
+          disabled
+          name="checked"
+        />
+        <span class="checkbox-custom" (click)="onArchive(task.id)"></span>
+      </label>
+      <div class="title">
+        <input type="text" [value]="task?.title" readonly placeholder="Input title" />
+      </div>
+      <div class="actions">
+        <a *ngIf="task?.state !== 'TASK_ARCHIVED'" (click)="onPin(task.id)">
+          <span class="icon-star"></span>
+        </a>
+      </div>
     </div>
   `,
 })
 export class TaskComponent implements OnInit {
   title: string;
-  @Input() task: any;
+  @Input() task: Task;
 
   // tslint:disable-next-line: no-output-on-prefix
   @Output() onPinTask: EventEmitter<any> = new EventEmitter();
@@ -21,4 +38,12 @@ export class TaskComponent implements OnInit {
   constructor() {}
 
   ngOnInit(): void {}
+
+  onPin(id: any): void {
+    this.onPinTask.emit(id);
+  }
+
+  onArchive(id: any): void {
+    this.onArchiveTask.emit(id);
+  }
 }
