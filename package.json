@@ -11,7 +11,8 @@
     "docs:json": "compodoc -p ./tsconfig.json -e json -d .",
     "storybook": "npm run docs:json && start-storybook -p 6006",
     "build-storybook": "npm run docs:json && build-storybook",
-    "jest": "jest --watch"
+    "jest": "jest --watch",
+    "jestu": "jest --watch -u"
   },
   "private": true,
   "dependencies": {
@@ -98,6 +99,9 @@
       }
     },
     "moduleNameMapper": {
+      "jest-preset-angular/build/setup-jest": "<rootDir>/node_modules/jest-preset-angular/setupJest.js",
+      "jest-preset-angular/build/AngularSnapshotSerializer": "<rootDir>/node_modules/jest-preset-angular/AngularSnapshotSerializer.js",
+      "jest-preset-angular/build/HTMLCommentSerializer": "<rootDir>/node_modules/jest-preset-angular/HTMLCommentSerializer.js",
       "\\.(css|less)$": "<rootDir>/src/jest-config/styleMock.js",
       "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/src/jest-config/fileMock.js"
     },
