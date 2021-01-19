@@ -32,7 +32,7 @@ export const Default = () => ({
   component: PureTaskListComponent,
   template: `
   <div style="padding: 3rem">
-    <app-pure-task-listapp-task-list [tasks]="tasks" (onPinTask)="onPinTask($event)" (onArchiveTask)="onArchiveTask($event)"></app-pure-task-listapp-task-list>
+    <app-pure-task-list [tasks]="tasks" (onPinTask)="onPinTask($event)" (onArchiveTask)="onArchiveTask($event)"></app-pure-task-list>
   <div>
   `,
   props: {
