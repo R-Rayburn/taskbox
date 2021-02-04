@@ -1298,17 +1298,17 @@
                 "name": "Default",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/app/components/pure-task-list.stories.ts",
+                "file": "src/app/components/pure-inbox-screen.stories.ts",
                 "type": "",
-                "defaultValue": "() => ({\n  component: PureTaskListComponent,\n  template: `\n  <div style=\"padding: 3rem\">\n    <app-pure-task-list [tasks]=\"tasks\" (onPinTask)=\"onPinTask($event)\" (onArchiveTask)=\"onArchiveTask($event)\"></app-pure-task-list>\n  <div>\n  `,\n  props: {\n    tasks: defaultTasksData,\n    onPinTask: actionsData.onPinTask,\n    onArchiveTask: actionsData.onArchiveTask\n  }\n})"
+                "defaultValue": "() => ({\n  component: PureInboxScreenComponent\n})"
             },
             {
                 "name": "Default",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/app/components/pure-inbox-screen.stories.ts",
+                "file": "src/app/components/pure-task-list.stories.ts",
                 "type": "",
-                "defaultValue": "() => ({\n  component: PureInboxScreenComponent\n})"
+                "defaultValue": "() => ({\n  component: PureTaskListComponent,\n  template: `\n  <div style=\"padding: 3rem\">\n    <app-pure-task-list [tasks]=\"tasks\" (onPinTask)=\"onPinTask($event)\" (onArchiveTask)=\"onArchiveTask($event)\"></app-pure-task-list>\n  <div>\n  `,\n  props: {\n    tasks: defaultTasksData,\n    onPinTask: actionsData.onPinTask,\n    onArchiveTask: actionsData.onArchiveTask\n  }\n})"
             },
             {
                 "name": "Default",
@@ -1346,17 +1346,17 @@
                 "name": "environment",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/environments/environment.prod.ts",
+                "file": "src/environments/environment.ts",
                 "type": "object",
-                "defaultValue": "{\n  production: true\n}"
+                "defaultValue": "{\n  production: false\n}"
             },
             {
                 "name": "environment",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/environments/environment.ts",
+                "file": "src/environments/environment.prod.ts",
                 "type": "object",
-                "defaultValue": "{\n  production: false\n}"
+                "defaultValue": "{\n  production: true\n}"
             },
             {
                 "name": "error",
@@ -1591,6 +1591,24 @@
                     "type": "literal type"
                 }
             ],
+            "src/app/components/pure-inbox-screen.stories.ts": [
+                {
+                    "name": "Default",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/components/pure-inbox-screen.stories.ts",
+                    "type": "",
+                    "defaultValue": "() => ({\n  component: PureInboxScreenComponent\n})"
+                },
+                {
+                    "name": "error",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/components/pure-inbox-screen.stories.ts",
+                    "type": "",
+                    "defaultValue": "() => ({\n  component: PureInboxScreenComponent,\n  props: {\n    error: true\n  }\n})"
+                }
+            ],
             "src/app/components/pure-task-list.stories.ts": [
                 {
                     "name": "Default",
@@ -1641,22 +1659,14 @@
                     "defaultValue": "[\n  ...defaultTasksData.slice(0, 5),\n  { id: '6', title: 'Task 6 (pinned)', state: 'TASK_PINNED' }\n]"
                 }
             ],
-            "src/app/components/pure-inbox-screen.stories.ts": [
+            "src/environments/environment.ts": [
                 {
-                    "name": "Default",
+                    "name": "environment",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "src/app/components/pure-inbox-screen.stories.ts",
-                    "type": "",
-                    "defaultValue": "() => ({\n  component: PureInboxScreenComponent\n})"
-                },
-                {
-                    "name": "error",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/app/components/pure-inbox-screen.stories.ts",
-                    "type": "",
-                    "defaultValue": "() => ({\n  component: PureInboxScreenComponent,\n  props: {\n    error: true\n  }\n})"
+                    "file": "src/environments/environment.ts",
+                    "type": "object",
+                    "defaultValue": "{\n  production: false\n}"
                 }
             ],
             "src/environments/environment.prod.ts": [
@@ -1667,16 +1677,6 @@
                     "file": "src/environments/environment.prod.ts",
                     "type": "object",
                     "defaultValue": "{\n  production: true\n}"
-                }
-            ],
-            "src/environments/environment.ts": [
-                {
-                    "name": "environment",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/environments/environment.ts",
-                    "type": "object",
-                    "defaultValue": "{\n  production: false\n}"
                 }
             ],
             "src/stories/Button.stories.ts": [
